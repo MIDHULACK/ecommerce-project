@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+<div class="row md-5 gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <div class="col-md-6">
+        <div class="card h-100">
+            <!-- Product image-->
+            <img class="card-img-top" src="{{product.image.url}}" alt="..." />
+
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder">{{product.product_name}}</h5>
+                    <!-- Product price-->
+                    {{product.price}}
+                    {{product.description}}
+                    {{product.category}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="col-md-6">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" class="btn btn-success">
+        </form>
+
+    </div>
+</div>
+{% endblock %}
